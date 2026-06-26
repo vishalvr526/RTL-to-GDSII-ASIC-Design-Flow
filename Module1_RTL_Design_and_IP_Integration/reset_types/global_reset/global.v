@@ -1,0 +1,13 @@
+module global(
+	input clk,gb_rst,d1,d2,
+	output reg q1,q2);
+always @(posedge clk)begin
+	if(gb_rst)begin
+		q1<=0;q2<=0;
+	end
+	else begin
+		q1<=d1;q2<=d2;
+	end
+end
+endmodule
+
