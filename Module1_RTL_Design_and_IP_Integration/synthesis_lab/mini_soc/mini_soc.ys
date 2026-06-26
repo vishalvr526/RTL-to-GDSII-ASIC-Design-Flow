@@ -1,0 +1,11 @@
+read_verilog counter.v alu.v mux.v top.v
+hierarchy -check -top top
+proc; opt; fsm; opt; memory; opt;
+techmap; opt;
+dfflibmap -liberty /home/lab-user/Desktop/bootcamp-files/Tech-pdks/osu018/osu018_stdcells.lib
+abc -liberty /home/lab-user/Desktop/bootcamp-files/Tech-pdks/osu018/osu018_stdcells.lib
+clean
+select top
+show 
+write_verilog top_netlist.v
+
